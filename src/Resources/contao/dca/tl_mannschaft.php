@@ -52,7 +52,7 @@ $GLOBALS['TL_DCA']['tl_mannschaft'] = array
 			'edit' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['edit'],
-				'href'                => 'table=tl_recipes',
+				'href'                => 'table=tl_position',
 				'icon'                => 'edit.svg'
 			),
 			'editheader' => array
