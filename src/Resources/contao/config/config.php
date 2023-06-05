@@ -8,32 +8,32 @@
  * @license LGPL-3.0+
  */
 
-array_insert($GLOBALS['BE_MOD']['recipes'], 100, array
-	(
-		//'recipescategorie' 		=> array('tables' => array('tl_recipes_categories', 'tl_recipes'))
-	)
-);
+//array_insert($GLOBALS['BE_MOD']['fussball'], 100, array
+//	(
+//		'recipescategorie' 		=> array('tables' => array('tl_recipes_categories', 'tl_recipes'))
+//	)
+//);
 
 
 /**
  * Style sheet
  */
-if (TL_MODE == 'BE')
-{
-	//$GLOBALS['TL_CSS'][] = 'bundles/jonnysprezept/recipes.css|static';
-}
+//if (TL_MODE == 'BE')
+//{
+//	$GLOBALS['TL_CSS'][] = 'bundles/jonnysprezept/recipes.css|static';
+//}
 
 
 /**
  * Front end modules
  */
-array_insert($GLOBALS['TL_CTE'], 1, array
+//array_insert($GLOBALS['TL_CTE'], 1, array
 //	(
 //		'includes' 	=> array
 //			(
 //				'recipescategorie_viewer'	=> 'RecipesCategorieViewer'
 //			)
 //	)
-);
+//);
 
 

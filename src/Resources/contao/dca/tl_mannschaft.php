@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Table tl_recipes_categories
+ * Table tl_mannschaft
  */
-$GLOBALS['TL_DCA']['tl_recipes_categories'] = array
+$GLOBALS['TL_DCA']['tl_mannschaft'] = array
 (
 
 	// Config
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ctable'                      => array('tl_recipes'),
+		'ctable'                      => array('tl_position'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(

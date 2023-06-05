@@ -3,14 +3,15 @@
 /**
  * Table tl_recipes
  */
-$GLOBALS['TL_DCA']['tl_recipes'] = array
+$GLOBALS['TL_DCA']['tl_position'] = array
 (
 
 	// Config
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'ptable'                      => 'tl_recipes_categories',
+		'ptable'                      => 'tl_mannschaft',
+		'ctable'                      => array('tl_player'),
 		'enableVersioning'            => true,
 		'sql' => array
 		(
