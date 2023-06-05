@@ -51,32 +51,32 @@ $GLOBALS['TL_DCA']['tl_mannschaft'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes_categories']['edit'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['edit'],
 				'href'                => 'table=tl_recipes',
 				'icon'                => 'edit.svg'
 			),
 			'editheader' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes_categories']['editheader'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['editheader'],
 				'href'                => 'act=edit',
 				'icon'                => 'header.svg'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes_categories']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.svg'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes_categories']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.svg',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes_categories']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.svg'
 			)
@@ -102,7 +102,7 @@ $GLOBALS['TL_DCA']['tl_mannschaft'] = array
 		),
 		'title' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes_categories']['title'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_mannschaft']['title'],
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
@@ -110,14 +110,14 @@ $GLOBALS['TL_DCA']['tl_mannschaft'] = array
 		),
 		'image' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes_categories']['image'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_mannschaft']['image'],
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
 			'sql'                     => "binary(16) NULL",
 		),
 		'description' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes_categories']['description'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_mannschaft']['description'],
 			'inputType'               => 'textarea',
 			'eval'                    => array('rte'=>'tinyMCE'),
 			'sql'                     => "text NULL"

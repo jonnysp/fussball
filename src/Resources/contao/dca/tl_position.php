@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Table tl_recipes
+ * Table tl_position
  */
 $GLOBALS['TL_DCA']['tl_position'] = array
 (
@@ -33,7 +33,7 @@ $GLOBALS['TL_DCA']['tl_position'] = array
 			'headerFields'            => array('title'),
 			'flag'        			  => 1,
 			'panelLayout'             => 'filter;search,limit',
-			'child_record_callback'   => array('tl_recipes', 'generateReferenzRow')
+			'child_record_callback'   => array('tl_position', 'generateReferenzRow')
 		),
 
 		'global_operations' => array
@@ -52,42 +52,42 @@ $GLOBALS['TL_DCA']['tl_position'] = array
 
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes']['edit'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_position']['edit'],
 				'href'                => 'act=edit',
 				'icon'                => 'edit.svg'
 			),
 
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_position']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.svg'
 			),
 			'cut' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes']['cut'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_position']['cut'],
 				'href'                => 'act=paste&amp;mode=cut',
 				'icon'                => 'cut.svg'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_position']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.svg',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_position']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.svg'
 			),
 			'toggle' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_recipes']['toggle'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_position']['toggle'],
 				'icon'                => 'visible.svg',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('tl_recipes', 'toggleIcon')
+				'button_callback'     => array('tl_position', 'toggleIcon')
 			)
 		)
 	),
@@ -119,7 +119,7 @@ $GLOBALS['TL_DCA']['tl_position'] = array
 		),
 		'title' => array
 		(
-			'label'                 => &$GLOBALS['TL_LANG']['tl_recipes']['title'],
+			'label'                 => &$GLOBALS['TL_LANG']['tl_position']['title'],
 			'search'              	=> true,
 			'inputType'          	=> 'text',
 			'eval'                  => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
@@ -127,51 +127,51 @@ $GLOBALS['TL_DCA']['tl_position'] = array
 		),
 		'image' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes']['image'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_position']['image'],
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
 			'sql'                     => ['type' => 'binary','notnull' => false,'length' => 16,'fixed' => true]
 		),
 		'images' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes']['images'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_position']['images'],
 			'inputType'               => 'fileTree',
 			'eval'                    => array('multiple'=>true, 'fieldType'=>'checkbox', 'orderField'=>'imagessort', 'files'=>true,'tl_class'=>'long clr','filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
 			'sql'                     => ['type' => 'blob','notnull' => false],
 			'load_callback' => array
 			(
-				array('tl_recipes', 'setFileTreeFlags')
+				array('tl_position', 'setFileTreeFlags')
 			)
 		),
 		'imagessort' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_products']['imagessort'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_position']['imagessort'],
 			'sql'                     => ['type' => 'blob','notnull' => false]
 		),
 		'description' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes']['description'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_position']['description'],
 			'inputType'               => 'textarea',
 			'eval'                    => array('rte'=>'tinyMCE','tl_class'=>'clr'),
 			'sql'                     => ['type' => 'text','notnull' => false]
 		),
 		'ingredients' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes']['ingredients'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_position']['ingredients'],
 			'inputType'               => 'textarea',
 			'eval'                    => array('rte'=>'tinyMCE','tl_class'=>'clr'),
 			'sql'                     => ['type' => 'text','notnull' => false]
 		),
 		'preparation' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes']['preparation'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_position']['preparation'],
 			'inputType'               => 'textarea',
 			'eval'                    => array('rte'=>'tinyMCE','tl_class'=>'clr'),
 			'sql'                     => ['type' => 'text','notnull' => false]
 		),
 		'published' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_recipes']['toggle'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_position']['toggle'],
 			'filter'                  => true,
 			'inputType'               => 'checkbox',
 			'eval'                    => array('submitOnChange'=>true, 'doNotCopy'=>true, 'tl_class'=>'w50'),
@@ -182,10 +182,10 @@ $GLOBALS['TL_DCA']['tl_position'] = array
 
 use Contao\Image\ResizeConfiguration;
 
-class tl_recipes extends Backend{
+class tl_position extends Backend{
 
 	public function generateReferenzRow($arrRow)	{
-		$this->loadLanguageFile('tl_recipes');
+		$this->loadLanguageFile('tl_position');
 
 		$label = $arrRow['title'];
 
@@ -213,7 +213,6 @@ class tl_recipes extends Backend{
 		}
 		return $varValue;
 	}
-
 
 	public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
 	{
@@ -258,7 +257,7 @@ class tl_recipes extends Backend{
 		}
 
 		// Update the database
-		$this->Database->prepare("UPDATE tl_recipes SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
+		$this->Database->prepare("UPDATE tl_position SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
 					   ->execute($intId);
 	}
 

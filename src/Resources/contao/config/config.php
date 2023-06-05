@@ -8,11 +8,12 @@
  * @license LGPL-3.0+
  */
 
-//array_insert($GLOBALS['BE_MOD']['fussball'], 100, array
-//	(
-//		'recipescategorie' 		=> array('tables' => array('tl_recipes_categories', 'tl_recipes'))
-//	)
-//);
+array_insert($GLOBALS['BE_MOD']['fussball'], 100, array
+	(
+		'fussball' 	=> array('tables' => array('tl_mannschaft', 'tl_position', 'tl_player'))
+	)
+);
+
 
 
 /**
