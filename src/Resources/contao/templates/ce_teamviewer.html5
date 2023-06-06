@@ -15,7 +15,7 @@
 		<div class="container">
 
 			<h1 class="text-center text-primary"><?= $position["title"]; ?></h1>
-
+			<hr>
 
 			<div class="row align-items-center justify-content-center mb-4">
 				<?php foreach($position["player"] as $player):  ?> 
@@ -43,13 +43,16 @@
 										<div class="row align-items-center justify-content-center">
 											<div class="col-sm-6"><img src="<?= $player["image"]["path"]; ?>" class="card-img-top" alt="..."></div>
 											<div class="col-sm-6 fs-4 pt-3">
-												<h1><span class="text-primary"><?= $player["number"]; ?></span><br><?= $player["title"]; ?></h1>
-												<span class="text-primary h3">"<?= $player["nickname"]; ?>"</span><br>
-												<i class="fa fa-birthday-cake"></i>&nbsp;&nbsp;<?= $player["birthday"]; ?><br>
-												<i class="bi bi-person-up"></i>&nbsp;&nbsp;<?= $player["size"]; ?><br>
-												<i class="fa fa-map-marker"></i>&nbsp;&nbsp;<?= $player["country"]; ?><br>
-												<i class="fa fa-calendar-check-o"></i>&nbsp;&nbsp;<?= $player["contract"]; ?><br>
-												<i class="fa fa-users"></i>&nbsp;&nbsp;<?= $player["position"]; ?><br>
+
+												<h1><span class="text-primary"><?= $player["number"]; ?></span><br>
+													<?= $player["title"]; ?></h1>
+									
+											<?php if(!empty($player["nickname"])) : ?><span class="text-primary h3">"<?= $player["nickname"]; ?>"</span><br><?php endif; ?>	
+											<?php if(!empty($player["birthday"])) : ?><i class="fa fa-birthday-cake"></i>&nbsp;&nbsp;<?= $player["birthday"]; ?><br><?php endif; ?>	
+												<?php if(!empty($player["size"])) : ?><i class="bi bi-person-up"></i>&nbsp;&nbsp;<?= $player["size"]; ?><br><?php endif; ?>	
+											<?php if(!empty($player["country"])) : ?><i class="fa fa-map-marker"></i>&nbsp;&nbsp;<?= $player["country"]; ?><br><?php endif; ?>	
+											<?php if(!empty($player["contract"])) : ?><i class="fa fa-calendar-check-o"></i>&nbsp;&nbsp;<?= $player["contract"]; ?><br><?php endif; ?>	
+											<?php if(!empty($player["position"])) : ?><i class="fa fa-users"></i>&nbsp;&nbsp;<?= $player["position"]; ?><br><?php endif; ?>	
 
 											</div>
 										</div>

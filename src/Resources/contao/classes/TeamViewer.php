@@ -44,6 +44,7 @@ class TeamViewer extends ContentElement
 				if (isset($filterPlayer) && count($filterPlayer) > 0){
 					foreach ($filterPlayer as $playerkey => $playervalue) {
 
+
 						$PlayerImage = \FilesModel::findByPk($playervalue->image);
 						$Player[$playerkey] = array(
 							"id" => $playervalue->id,
@@ -56,10 +57,10 @@ class TeamViewer extends ContentElement
 								"extension" => $PlayerImage->extension
 							),
 							"nickname" => $playervalue->nickname,
-							"birthday" => date('d.m.Y',(int)$playervalue->birthday),
+							"birthday" => !empty($playervalue->birthday) ? date('d.m.Y',(int)$playervalue->birthday) : '',
 							"size" => $playervalue->size,
 							"country" => $playervalue->country,
-							"contract" => date('d.m.Y',(int)$playervalue->contract),
+							"contract" => !empty($playervalue->contract) ? date('d.m.Y',(int)$playervalue->contract) : '',
 							"position" => $playervalue->position
 						);
 					}
