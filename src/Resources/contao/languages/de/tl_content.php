@@ -1,5 +1,5 @@
 <?php
 
-$GLOBALS['TL_LANG']['tl_content']['recipescategorie'] = array("Rezept Kategorie","Bitte wählen Sie eine Rezept Kategorie aus der Liste!");
-$GLOBALS['TL_LANG']['tl_content']['recipes_categories_legend'] = "Rezept Kategorie";
+$GLOBALS['TL_LANG']['tl_content']['teams'] = array("Mannschaft","Bitte wählen Sie eine Mannschaft aus der Liste!");
+$GLOBALS['TL_LANG']['tl_content']['teams_legend'] = "Mannschaft";
 

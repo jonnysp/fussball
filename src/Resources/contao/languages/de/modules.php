@@ -1,6 +1,7 @@
 <?php
 
-$GLOBALS['TL_LANG']['MOD']['recipes'] = array('Rezepte Verwaltung');
-$GLOBALS['TL_LANG']['MOD']['recipescategorie'] = array('Rezepte','Verwalte die Rezepte');
+$GLOBALS['TL_LANG']['MOD']['teams'] = array('Fussball');
+$GLOBALS['TL_LANG']['MOD']['position'] = array('Position','Position');
 
-$GLOBALS['TL_LANG']['CTE']['recipescategorie_viewer'] = array("Rezept-Kategorie","");
+$GLOBALS['TL_LANG']['CTE']['team_viewer'] = array("Mannschaft","");
+

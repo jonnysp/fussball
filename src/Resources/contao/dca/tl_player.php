@@ -94,7 +94,7 @@ $GLOBALS['TL_DCA']['tl_player'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{title_legend},title,published;{title_images},image,images;{title_description},description,ingredients,preparation,tags'
+		'default'                     => '{title_legend},title,published;{title_images},image;{title_details},number,nickname,birthday,size,country,contract,position;'
 	),
 
 	// Fields
@@ -124,6 +124,14 @@ $GLOBALS['TL_DCA']['tl_player'] = array
 			'eval'                  => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'sql'                   => ['type' => 'string', 'length' => 128, 'default' => '']
 		),
+		'number' => array
+		(
+			'label'                 => &$GLOBALS['TL_LANG']['tl_player']['number'],
+			'search'              	=> true,
+			'inputType'          	=> 'text',
+			'eval'                  => array('maxlength'=>128, 'tl_class'=>'w50'),
+			'sql'                   => ['type' => 'string', 'length' => 128, 'default' => '']
+		),
 		'image' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_player']['image'],
@@ -131,43 +139,65 @@ $GLOBALS['TL_DCA']['tl_player'] = array
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
 			'sql'                     => ['type' => 'binary','notnull' => false,'length' => 16,'fixed' => true]
 		),
-		'images' => array
+
+
+		'nickname' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_player']['images'],
-			'inputType'               => 'fileTree',
-			'eval'                    => array('multiple'=>true, 'fieldType'=>'checkbox', 'orderField'=>'imagessort', 'files'=>true,'tl_class'=>'long clr','filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
-			'sql'                     => ['type' => 'blob','notnull' => false],
-			'load_callback' => array
-			(
-				array('tl_player', 'setFileTreeFlags')
-			)
+			'label'                 => &$GLOBALS['TL_LANG']['tl_player']['nickname'],
+			'search'              	=> true,
+			'inputType'          	=> 'text',
+			'eval'                  => array('maxlength'=>128, 'tl_class'=>'w50'),
+			'sql'                   => ['type' => 'string', 'length' => 128, 'default' => '']
 		),
-		'imagessort' => array
+
+
+		'birthday'	=> array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_player']['imagessort'],
-			'sql'                     => ['type' => 'blob','notnull' => false]
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'date', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'sql'                     => "varchar(10) NOT NULL default ''"
 		),
-		'description' => array
+
+
+		'size' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_player']['description'],
-			'inputType'               => 'textarea',
-			'eval'                    => array('rte'=>'tinyMCE','tl_class'=>'clr'),
-			'sql'                     => ['type' => 'text','notnull' => false]
+			'label'                 => &$GLOBALS['TL_LANG']['tl_player']['size'],
+			'search'              	=> true,
+			'inputType'          	=> 'text',
+			'eval'                  => array('maxlength'=>128, 'tl_class'=>'w50'),
+			'sql'                   => ['type' => 'string', 'length' => 128, 'default' => '']
 		),
-		'ingredients' => array
+
+		'country' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_player']['ingredients'],
-			'inputType'               => 'textarea',
-			'eval'                    => array('rte'=>'tinyMCE','tl_class'=>'clr'),
-			'sql'                     => ['type' => 'text','notnull' => false]
+			'label'                 => &$GLOBALS['TL_LANG']['tl_player']['country'],
+			'search'              	=> true,
+			'inputType'          	=> 'text',
+			'eval'                  => array('maxlength'=>128, 'tl_class'=>'w50'),
+			'sql'                   => ['type' => 'string', 'length' => 128, 'default' => '']
 		),
-		'preparation' => array
+
+
+		'contract' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_player']['preparation'],
-			'inputType'               => 'textarea',
-			'eval'                    => array('rte'=>'tinyMCE','tl_class'=>'clr'),
-			'sql'                     => ['type' => 'text','notnull' => false]
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'date', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'sql'                     => "varchar(10) NOT NULL default ''"
 		),
+
+		'position' => array
+		(
+			'label'                 => &$GLOBALS['TL_LANG']['tl_player']['position'],
+			'search'              	=> true,
+			'inputType'          	=> 'text',
+			'eval'                  => array('maxlength'=>128, 'tl_class'=>'w50'),
+			'sql'                   => ['type' => 'string', 'length' => 128, 'default' => '']
+		),
+
+
+
 		'published' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_player']['toggle'],
@@ -203,15 +233,6 @@ class tl_player extends Backend{
 		return $label;
     }
 
-
-	public function setFileTreeFlags($varValue, DataContainer $dc)
-	{
-		if ($dc->activeRecord)
-		{
-				$GLOBALS['TL_DCA'][$dc->table]['fields'][$dc->field]['eval']['isGallery'] = true;
-		}
-		return $varValue;
-	}
 
 
 	public function toggleIcon($row, $href, $label, $title, $icon, $attributes)

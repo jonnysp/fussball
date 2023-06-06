@@ -8,9 +8,9 @@
  * @license LGPL-3.0+
  */
 
-array_insert($GLOBALS['BE_MOD']['fussball'], 100, array
+array_insert($GLOBALS['BE_MOD']['teams'], 100, array
 	(
-		'fussball' 	=> array('tables' => array('tl_mannschaft', 'tl_position', 'tl_player'))
+		'teams' => array('tables' => array('tl_team', 'tl_position', 'tl_player'))
 	)
 );
 
@@ -19,22 +19,21 @@ array_insert($GLOBALS['BE_MOD']['fussball'], 100, array
 /**
  * Style sheet
  */
-//if (TL_MODE == 'BE')
-//{
-//	$GLOBALS['TL_CSS'][] = 'bundles/jonnysprezept/recipes.css|static';
-//}
+if (TL_MODE == 'BE')
+{
+	$GLOBALS['TL_CSS'][] = 'bundles/jonnyspfussball/team.css|static';
+}
 
 
 /**
  * Front end modules
  */
-//array_insert($GLOBALS['TL_CTE'], 1, array
-//	(
-//		'includes' 	=> array
-//			(
-//				'recipescategorie_viewer'	=> 'RecipesCategorieViewer'
-//			)
-//	)
-//);
-
+array_insert($GLOBALS['TL_CTE'], 1, array
+	(
+		'includes' 	=> array
+			(
+				'team_viewer'	=> 'TeamViewer'
+			)
+	)
+);
 

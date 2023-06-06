@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Table tl_mannschaft
+ * Table tl_team
  */
-$GLOBALS['TL_DCA']['tl_mannschaft'] = array
+$GLOBALS['TL_DCA']['tl_team'] = array
 (
 
 	// Config
@@ -31,6 +31,7 @@ $GLOBALS['TL_DCA']['tl_mannschaft'] = array
 			'flag'                    => 1,
 			'panelLayout'             => 'filter;search,limit'
 		),
+
 		'label' => array
 		(
 			'fields'                  => array('id','title'),
@@ -51,32 +52,32 @@ $GLOBALS['TL_DCA']['tl_mannschaft'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['edit'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_team']['edit'],
 				'href'                => 'table=tl_position',
 				'icon'                => 'edit.svg'
 			),
 			'editheader' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['editheader'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_team']['editheader'],
 				'href'                => 'act=edit',
 				'icon'                => 'header.svg'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_team']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.svg'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_team']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.svg',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_mannschaft']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_team']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.svg'
 			)
@@ -102,7 +103,7 @@ $GLOBALS['TL_DCA']['tl_mannschaft'] = array
 		),
 		'title' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_mannschaft']['title'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_team']['title'],
 			'search'                  => true,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
@@ -110,19 +111,18 @@ $GLOBALS['TL_DCA']['tl_mannschaft'] = array
 		),
 		'image' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_mannschaft']['image'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_team']['image'],
 			'inputType'               => 'fileTree',
 			'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
 			'sql'                     => "binary(16) NULL",
 		),
 		'description' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_mannschaft']['description'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_team']['description'],
 			'inputType'               => 'textarea',
 			'eval'                    => array('rte'=>'tinyMCE'),
 			'sql'                     => "text NULL"
 		)
 	)
 );
-
 

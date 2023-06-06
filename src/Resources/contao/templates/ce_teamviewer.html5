@@ -1,0 +1,83 @@
+<img class="img-fluid mx-auto d-block" src="<?= $this->Team["image"]["path"]; ?>">
+
+
+<div>
+	
+	<div class="container my-5">
+		<h1><?= $this->Team["title"]; ?></h1>
+		<?= $this->Team["description"]; ?>
+	</div>
+
+
+	<?php foreach($this->Team["positions"] as $position):  ?> 
+	
+	<div class="dirttop dirtbottom">
+		<div class="container">
+
+			<h1 class="text-center text-primary"><?= $position["title"]; ?></h1>
+
+
+			<div class="row align-items-center justify-content-center mb-4">
+				<?php foreach($position["player"] as $player):  ?> 
+
+					
+					<div class="col-6  col-md-4 col-lg-3  mx-auto">
+
+						<div class="text-white mb-3 position-relative" >
+							<img src="<?= $player["image"]["path"]; ?>" class="card-img-top" alt="...">
+							<h5 class="card-title-"><span class="text-primary"><?= $player["number"]; ?></span><br> <?= $player["title"]; ?></h5>
+							<a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#Modal<?= $player["id"]; ?>"></a>
+						</div>
+
+
+
+						<div class="modal fade" id="Modal<?= $player["id"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg modal-dialog-centered">
+								<div class="modal-content">
+									<div class="modal-header">
+										<!--<h1 class="modal-title fs-5" id="exampleModalLabel"><?= $player["title"]; ?></h1>-->
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										
+										<div class="row align-items-center justify-content-center">
+											<div class="col-sm-6"><img src="<?= $player["image"]["path"]; ?>" class="card-img-top" alt="..."></div>
+											<div class="col-sm-6 fs-4 pt-3">
+												<h1><span class="text-primary"><?= $player["number"]; ?></span><br><?= $player["title"]; ?></h1>
+												<span class="text-primary h3">"<?= $player["nickname"]; ?>"</span><br>
+												<i class="fa fa-birthday-cake"></i>&nbsp;&nbsp;<?= $player["birthday"]; ?><br>
+												<i class="bi bi-person-up"></i>&nbsp;&nbsp;<?= $player["size"]; ?><br>
+												<i class="fa fa-map-marker"></i>&nbsp;&nbsp;<?= $player["country"]; ?><br>
+												<i class="fa fa-calendar-check-o"></i>&nbsp;&nbsp;<?= $player["contract"]; ?><br>
+												<i class="fa fa-users"></i>&nbsp;&nbsp;<?= $player["position"]; ?><br>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+	<br><br><br>
+
+	<?php endforeach; ?>
+
+</div>
+
+
+
+
+
+
+
+<?php 
+// $this->showTemplateVars();
+?>
