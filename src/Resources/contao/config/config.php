@@ -10,7 +10,7 @@
 
 array_insert($GLOBALS['BE_MOD']['teams'], 100, array
 	(
-		'teams' => array('tables' => array('tl_team', 'tl_position', 'tl_player'))
+		'team' => array('tables' => array('tl_team', 'tl_position', 'tl_player'))
 	)
 );
 
