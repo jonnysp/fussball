@@ -17,14 +17,11 @@ class tl_content_team extends Backend
 
 	public function getTeam()
 	{
-		
 		$objTeams = \TeamModel::findAll();
 		$arrTeams = array();
-
-
 		foreach ($objTeams as $objTeam)
 		{
-			$arrTeams[$objTeams->id] = '[ID ' . $objTeams->id . '] - '. $objTeams->title;
+			$arrTeams[$objTeam->id] = '[ID ' . $objTeam->id . '] - '. $objTeam->title;
 		}
 		return $arrTeams;
 	}
