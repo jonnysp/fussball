@@ -34,8 +34,8 @@ $GLOBALS['TL_DCA']['tl_team'] = array
 
 		'label' => array
 		(
-			'fields'                  => array('id','title'),
-			'format'                  => '[%s] - %s'
+			'fields'                  => array('title'),
+			'format'                  => '%s'
 		),
 		
 		'global_operations' => array
