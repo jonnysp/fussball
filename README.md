@@ -1,2 +1,2 @@
 # Fussball
-Adds Fussball Team Management to Contao 4
+Adds Fussball Team Management to Contao
